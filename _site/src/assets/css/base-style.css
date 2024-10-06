@@ -1,0 +1,213 @@
+/*Global code stuff*/
+/*Forces the site to play nice on all browsers*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+    /*color guide
+    --dark brown: #655435;
+    --light brown: #D4CFBA;
+    --light blue: #73CDDF;
+    --dark blue: #399BAE;
+    --black: #130700;
+    
+    --darker blue: #276d7a
+    --lightr blue: #adeefb
+    --lighter brown: #f5f0d8
+    --white: #FFFFFF*/
+  
+  :root {
+    /*colors*/
+    --background: #D4CFBA;
+    --box: #73CDDF;
+    --top-box: #655435;
+    --txt: #130700;
+    --link: #655435;
+    --link2: #D4CFBA;
+    --scroll-box: #399BAE;
+    --scroll-box-txt: #130700;
+    --btn: #655435;
+    --btn-txt: #f5f0d8;
+    --btn-hover: #399BAE;
+    --btn-hover-txt: #130700;
+
+    --background-img: url(/assets/img/background-light.png);
+    /*background image is a lightly edited version of an image Owl made avalible for one of their free-to-use
+    templates: https://owlsroost.xyz/freebies/site-templates/kiss/index.html*/
+
+    --burgericon:url(https://kalechips.net/assets/burger.svg); /* Path to burger vector */
+    --closeicon:url(https://kalechips.net/assets/close.svg); /* Path to close vector */
+    --overlay:rbg(57,155,174,0.8)
+  }
+   /*Allows for dark mode*/
+@media (prefers-color-scheme: dark) {
+	:root {
+	  /*colors*/
+	  --background: #655435;
+	  --box: #399BAE;
+	  --top-box: #399BAE;
+	  --txt: #FFFFFF;
+	  --link: #f5f0d8;
+	  --scroll-box: #655435;
+	  --scroll-box-txt: #FFFFFF;
+	  --btn: #655435;
+	  --btn-txt: #D4CFBA;
+	  --btn-hover: #73CDDF;
+	  --btn-hover-txt: #130700;
+	  --background-img: url(/assets/img/background-dark.png);
+	}
+}
+
+/*Add this class to images to make them responsive*/
+.responsive {
+    width: 100%;
+    height: auto;
+  }
+  
+/*Add this class to images to make them scale down if needed, but never scale up*/
+.responsive-small {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Text Related Code Start*/
+body {
+    font-family: sans-serif;
+    color:var(--txt);
+    background-color:var(--background);
+    background-image:var(--background-img);
+    font-size: 18px;
+    background-attachment: fixed;
+}
+
+.center {
+    text-align: center;
+}
+
+p {
+    margin-bottom:8px;
+}
+
+a {
+    color:var(--link);
+}
+/*Text Related Code End*/
+
+/*To contain the beast (flexbox)*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+/*Main Content*/
+.maincontent {
+    flex: 75%;
+    padding: 10px;
+}
+  
+/*Sidebar*/
+.sidebar {
+    flex: 25%;
+    padding: 10px;
+    align-self: flex-start;
+}
+
+/*Following two bits make the side bar dissapear on small screens*/
+.side-menu {
+    display:block;
+}
+
+@media screen and (max-width: 768px) {
+    .side-menu {
+        display:none;
+    }
+}
+
+/*Top Most Box with Skip Content*/
+.top-box {
+    background-color:var(--top-box);
+    border-style: hidden hidden solid hidden;
+    border-color: #130700;
+}
+
+.top-box a {
+    color:var(--link2);
+    text-decoration: none;
+}
+
+.top-box details {
+    cursor: pointer;
+}
+
+.top-box p {
+    margin-bottom:0px;
+}
+
+/*The next two sections of code make the top-most box display a menu only when the screen is under a certaian size. Need to play more with what that size is to get a good one.*/
+.top-menu {
+    display:none;
+}
+
+@media screen and (max-width: 768px) {
+    .top-menu {
+        display:block;
+    }
+}
+
+/*Blue boxes where most stuff goes*/
+.box {
+    background-color:var(--box);
+    border-style: solid;
+    border-color: #130700;
+    border-radius: 5px;
+    padding: 10px 30px 1px 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+/*buttons*/
+.btn {
+    background-color: var(--btn);
+    color: var(--btn-txt);
+    text-align: center;
+    text-decoration: none;
+    border-style: solid;
+    border-color: #130700;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+}
+  
+.btn:hover {
+      color: var(--btn-hover-txt);
+      background: var(--btn-hover);
+}
+
+.btn2 {
+    background-color: var(--btn);
+    color: var(--btn-txt);
+    text-align: center;
+    text-decoration: none;
+    border-style: solid;
+    border-color: #130700;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.btn2:hover {
+    color: var(--btn-hover-txt);
+    background: var(--btn-hover);
+}
+
+/*Footer*/
+footer {
+    background-color:var(--top-box);
+    border-style: solid hidden hidden hidden;
+    border-color: #130700;
+    position:absolute; 
+}

@@ -1,0 +1,19 @@
+---
+layout: base.html
+title: Journal
+pagination:
+    data: collections.journal
+    size: 5
+    alias: journal
+    reverse: true
+---
+<div class="box">
+    <div class="center"><h1>{{ title }}</h1></div>
+    {% for journal in journal %}
+        <div class="nomargin"><h3><a href="{{ journal.url }}">{{ journal.data.title }}</a></h3>
+        <h4>{{ journal.data.dateString }}</h4></div>
+        <p>{{ journal.data.description }} <a href="{{ journal.url }}">Read More</a></p>
+    {% endfor %}
+    
+    <p>{% if pagination.href.previous %}<a href="{{ pagination.href.previous}}" class="btn">Newer Posts</a>{% endif %} {% if pagination.href.next %}<a href="{{ pagination.href.next }}" class="btn"><strong>Older Posts</strong></a>{% endif %}</p>
+</div>

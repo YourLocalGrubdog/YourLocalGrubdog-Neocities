@@ -1,0 +1,143 @@
+/*Base structure is home to the code for classes alongside some styling for class-spesific elements. It also has more functional code like responsive images and the "play nice on all browsers" code*/
+
+/*Code was made and is maintained by Grubdog at https://your-local-grubdog.neocities.org - you are welcome to refrence and use bits of the code, but I would prefer that you don't reuse entire sections of the site!*/
+
+/*Forces the site to play nice on all browsers*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+/*Add this class to images to make them fully responsive, scaling up and down depending on screen size*/
+.responsive {
+    width: 100%;
+    height: auto;
+  }
+  
+/*Add this class to images to make them scale down if needed, but never scale up*/
+.responsive-small {
+    max-width: 100%;
+    height: auto;
+}
+
+/*To contain the beast (flexbox)*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+} 
+    /*Main Content*/
+    .maincontent {
+        flex: 75%;
+        padding: 10px;
+    }
+    /*Sidebar*/
+    .sidebar {
+        flex: 25%;
+        padding: 10px;
+        align-self: flex-start;
+    }
+
+/*Columns*/
+.column-wrap {
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction: row-reverse;
+    margin:auto;
+}
+    .column { 
+        flex: 1 1 50%; 
+        padding: 5px;
+    }
+
+/*Following two bits make the side bar dissapear on small screens*/
+.side-menu {
+    display:block;
+}
+    @media screen and (max-width: 768px) {
+        .side-menu {
+            display:none;
+        }
+    }
+
+/*Top Most Box with Skip Content*/
+.top-box {
+    background-color:var(--top-box);
+    border-style: hidden hidden solid hidden;
+    border-color: #130700;
+    color:var(--txt2);
+}
+    .top-box a {
+        color:var(--link2);
+        text-decoration: none;
+    }
+    .top-box details {
+        cursor: pointer;
+    }
+    .top-box p {
+        margin-bottom:0px;
+    }
+
+/*The next two sections of code make the top-most box display a menu only when the screen is under a certaian size. Need to play more with what that size is to get a good one.*/
+.top-menu {
+    display:none;
+}
+    @media screen and (max-width: 768px) {
+        .top-menu {
+            display:block;
+        }
+    }
+
+/*Blue boxes where most stuff goes*/
+.box {
+    background-color:var(--box);
+    border-style: solid;
+    border-color: #130700;
+    border-radius: 5px;
+    padding: 10px 30px 1px 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+/*Second box with a diffrent color, just in case.*/
+.box2 {
+    background-color:var(--top-box);
+    color:var(--btn-txt);
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px 30px 1px 30px;
+    border-color: #130700;
+    margin-bottom: 10px;
+}
+
+/*scroll boxes*/
+.scroll-box {
+    background-color: var(--scroll-box);
+    color: var(--scroll-box-txt);
+    border-color: #130700;
+    border-style: solid;
+    border-radius: 5px;
+    height: 250px;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+} 
+    .scroll-box a {
+        color: var(--scroll-box-link)
+    }
+
+.scroll-person {
+    background: transparent;
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+/*Javascript-free tabs, curtosy of KaleChips: https://kalechips.net/projects/snippets.php?p=tabs*/
+.tabwrap section {
+	display: none;
+}
+    .tabwrap section:target {
+	    display:block;
+    }
