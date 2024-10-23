@@ -2,6 +2,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addWatchTarget("./src/assets");
+  eleventyConfig.addPassthroughCopy("./src/shrine");
+  eleventyConfig.addWatchTarget("./src/shrine");
   eleventyConfig.addLiquidFilter("toUTCDatePermalink", (date) => {
     const year = date.getUTCFullYear().toString();
     const month = (date.getUTCMonth() + 1).toString().padStart(2, "0");
