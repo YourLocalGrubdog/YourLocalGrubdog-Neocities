@@ -11,7 +11,7 @@ pagination:
     <div class="center"><h1>{{ title }}</h1></div>
     {% for posts in posts %}
         <div class="nomargin"><h3><a href="{{ posts.url }}">{{ posts.data.title }}</a></h3>
-        <h4>{{ posts.data.dateString }}</h4></div>
+        <h4>{{ posts.data.date | date: '%B %d, %Y' }}</h4></div>
         <p>{{ posts.data.description }} <a href="{{ posts.url }}">Read More</a></p>
     {% endfor %}
     
