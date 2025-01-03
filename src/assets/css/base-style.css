@@ -124,24 +124,6 @@ ol {
     padding-left: 30px;
     margin-bottom: 20px;
 }
-
-/*Microblog Code*/
-
-.feed-title {
-    font-family: "ubuntu", "Atkinson Hyperlegible", "Arial", sans-serif;
-    font-size: 27px;
-    margin-bottom: 20px;
-}
-
-.feed-item-title {
-    font-family: "ubuntu", "Atkinson Hyperlegible", "Arial", sans-serif;
-    font-size: 21.06px;
-    margin-bottom: 10px;
-}
-
-.feed-item-desc {
-    font-family: "Atkinson Hyperlegible", "Arial", sans-serif;
-}
   
 /*Other elements, like buttons and scroll boxes*/
 
@@ -151,6 +133,20 @@ details {
 
 img {
     margin-bottom:8px;
+}
+
+.tabwrap h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--txt);
+    margin: 1em 0;
+    padding: 0;
 }
 
 /*buttons*/

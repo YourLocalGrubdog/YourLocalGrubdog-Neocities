@@ -1,17 +1,30 @@
-module.exports = function (eleventyConfig) {
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addWatchTarget("./src/assets");
   eleventyConfig.addPassthroughCopy("./src/shrine");
   eleventyConfig.addWatchTarget("./src/shrine");
-  eleventyConfig.addLiquidFilter("toUTCDatePermalink", (date) => {
-    const year = date.getUTCFullYear().toString();
-    const month = (date.getUTCMonth() + 1).toString().padStart(2, "0");
-    const day = date.getUTCDate().toString().padStart(2, "0");
-    return `${year}/${month}/${day}`;
-})
+  eleventyConfig.addPlugin(feedPlugin, {
+	type: "rss", // or "atom", "json"
+	outputPath: "/feed.xml",
+	collection: {
+		name: "posts", // iterate over `collections.posts`
+		limit: 5,     // 0 means no limit
+	},
+	metadata: {
+		language: "en",
+		title: "Blog of the Grubby Dog",
+		subtitle: "Where I scream about viddy games.",
+		base: "https://your-local-grubdog.neocities.org/blog/",
+		author: {
+			name: "Grubdog",
+			email: "", // Optional
+		}
+	}
+});
 
-  return {
+return {
     passthroughFileCopy: true,
     dir: {
       input: "src",
