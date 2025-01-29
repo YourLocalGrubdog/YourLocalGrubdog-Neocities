@@ -131,6 +131,10 @@ details {
     margin-bottom: 20px;
 }
 
+summary {
+    font-size: 22px;
+}
+
 img {
     margin-bottom:8px;
 }
