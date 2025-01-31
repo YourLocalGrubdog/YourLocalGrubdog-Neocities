@@ -41,7 +41,7 @@
 	  /*colors*/
 	  --background: #453524;
 	  --box: #23606C;
-	  --top-box: #D4CFBA;
+	  --top-box: #399BAE;
 	  --txt: #FFFFFF;
       --txt2: #130700;
 	  --link: #9BDCE8;
@@ -69,7 +69,7 @@
 
 @font-face {
     font-family: Ubuntu;
-    src: url('/assets/fonts/ubuntu.ttf');
+    src: url('/assets/fonts/Ubuntu.ttf');
 }
 
 /*Text*/
@@ -113,6 +113,21 @@ p {
 
 a {
     color:var(--link);
+}
+
+/*next two blocks were done by https://flamedfury.com/ with minor edits*/
+a[href^='http']:not([href^="https://your-local-grubdog.neocities.org/"]):not(:has(img)) {
+    padding-right: .8em;
+}
+
+a[href^='http']:not([href^="https://your-local-grubdog.neocities.org/"]):not(:has(img))::after {
+    content: '\2197';
+    position: absolute;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 0.25em;
+    font-size: 0.8em;
 }
 
 ul {
