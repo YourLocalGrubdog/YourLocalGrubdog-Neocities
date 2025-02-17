@@ -1,0 +1,62 @@
+/*Forces the site to play nice on all browsers*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/*Add this class to images to make them scale down if needed, but never scale up*/
+.responsive-small {
+    max-width: 500px;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .responsive-small {
+        max-width: 200px;
+        height: auto;
+    }
+}
+
+	body {
+    font-family: "Atkinson Hyperlegible", "Arial", sans-serif;
+    color: black;
+    background-image: url("https://sadhost.neocities.org/images/tiles/graybat.png");
+    font-size: 18px;
+    background-attachment: fixed;
+	padding: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 30px
+    }
+}
+
+.box {
+    background-color: #e6e6e6;
+    border-style: solid;
+    border-color: #130700;
+    border-radius: 5px;
+    padding: 10px 30px 1px 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom:8px;
+}
+
+
+.center {
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: "ubuntu", "Atkinson Hyperlegible", "Arial", sans-serif;
+    margin-bottom: 20px;
+}
+  
+h3  {
+    margin-bottom: 20px;
+}
