@@ -62,6 +62,12 @@
     src: url('/assets/fonts/Atkinson-Hyperlegible.ttf');
 }
 
+/*A temporary duplicate of the above font to make the status.cafe thing work; it WILL be removed. Eventually.*/
+@font-face {
+    font-family: Temp;
+    src: url('https://your-local-grubdog.neocities.org/assets/fonts/Atkinson-Hyperlegible.ttf');
+}
+
 @font-face {
     font-family: Kanit;
     src: url('/assets/fonts/kanit.ttf');
