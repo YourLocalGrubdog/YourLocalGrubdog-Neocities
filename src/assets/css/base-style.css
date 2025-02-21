@@ -239,3 +239,10 @@ footer p {
 footer a {
     color:var(--link2);
 }
+
+blockquote {
+    border-left: 5px solid var(--link);
+    padding-left: 10px;
+    margin-left: 20px;
+    font-style: italic;
+}
