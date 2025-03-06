@@ -114,7 +114,7 @@ h3  {
 }
 
 p {
-    margin-bottom:8px;
+    margin-bottom:5px;
 }
 
 a {
@@ -139,6 +139,14 @@ a[href^='http']:not([href^="https://your-local-grubdog.neocities.org/"]):not(:ha
 ul {
     padding-left: 30px;
     margin-bottom: 20px;
+}
+
+.tabwrap ul li {
+    margin-bottom: 5px;
+}
+
+.tabwrap ul ul {
+    margin-bottom: -3px;
 }
   
 ol {
