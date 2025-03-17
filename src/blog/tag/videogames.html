@@ -1,0 +1,27 @@
+---
+layout: base.html
+title: Tagged&#58; Video Games
+pagination:
+    data: collections.videogames
+    size: 6
+    alias: videogames
+    reverse: true
+---
+<section class="taped">
+    <div class="center"><h1>{{ title }}</h1></div>
+    {% for posts in videogames %}
+        <div class="nomargin"><h2><a href="{{ posts.url }}">{{ posts.data.title }}</a></h2>
+        <h3>{{ posts.data.date | date: '%B %d, %Y' }}</h3></div>
+        <p>{{ posts.data.description }} <a href="{{ posts.url }}">Read More</a></p>
+    {% endfor %}
+    
+    <p>{% if pagination.href.previous %}<button><a href="{{ pagination.href.previous}}"><strong>Newer Posts</strong></a></button>{% endif %} {% if pagination.href.next %}<button><a href="{{ pagination.href.next }}"><strong>Older Posts</a></strong></button>{% endif %}</p>
+    <hr>
+    <p>Not what you want? Then head <a href="/blog">back to the main blog page!</a></p>
+    <p>Or you can look at one of the other tags:</p>
+    <ul>
+        <li><a href="/blog/tag/journal">Journal</a></li>
+        <li><a href="/blog/tag/site-updates">Site Updates</a></li>
+        <li><a href="/blog/tag/web-mastery">Web Mastery</a></li>
+    </ul>
+</section>

@@ -194,6 +194,7 @@ a {
 
 .big-txt {
     font-size: 1.2em;
+    margin-bottom:10px;
 }
 
 /*CLASSES THAT ONLY EDIT IMAGES (I.E., RESPONSIVE IMAGES*/
