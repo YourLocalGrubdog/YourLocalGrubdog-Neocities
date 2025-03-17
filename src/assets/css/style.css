@@ -1,0 +1,489 @@
+/*color guide
+  --dark brown: #655435;
+  --light brown: #D4CFBA;
+  --light blue: #73CDDF;
+  --dark blue: #399BAE;
+  
+  --darker blue: #276d7a
+  --lighter blue: #9BDCE8
+  --lighter brown: #f5f0d8
+  --white: #FFFFFF*/
+  :root {
+    /*colors*/
+    --background: #a4cdd3;
+    --box: #D4CFBA;
+    --top-box: #9ad3dd;
+    --txt: #1e0b00;
+    --txt2: #021b1f;
+    --link: #276d7a;
+    --link2: #14383e;
+    --scroll-box: #9ad3dd;
+    --scroll-box-txt: #000000;
+    --btn: #655435;
+    --btn-txt: #f5f0d8;
+    --btn-hover: #23606C;
+    --btn-hover-txt: #ffffff;
+    --shadow: rgba(35, 73, 79, 0.38);
+    /*images*/
+    --background-img: url(/assets/img/wild-flowers_light.png);/*light mode ver of this texture wanted to make it more obvious*/
+    --box-texture: url(/assets/img/natural-paper_light.png);
+}
+
+/*Allows for dark mode*/
+@media (prefers-color-scheme: dark) {
+	:root {
+	  /*colors*/
+	  --background: #3d717a;
+	  --box: #655435;
+	  --top-box: #655435;
+	  --txt: #fcf6f1;
+      --txt2: #fcf6f1;
+	  --link: #9BDCE8;
+      --link2: #9BDCE8;
+	  --scroll-box: #3d717a;
+	  --scroll-box-txt: #FFFFFF;
+	  --btn: #399BAE;
+	  --btn-txt: #130700;
+	  --btn-hover: #D4CFBA;
+	  --btn-hover-txt: #453524;
+      --shadow: rgba(6, 31, 36, 0.4);
+	  /*images*/
+      --background-img: url(/assets/img/wild-flowers_dark.png);
+      --box-texture: url(/assets/img/natural-paper_dark.png); /*dark mode version of this texture wanted to make it less obvious*/
+	}
+}
+/*Forces the site to play nice on all browsers*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+/*Flex Box*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+} 
+    /*Main Content*/
+    .maincontent {
+        flex: 75%;
+        padding: 10px;
+    }
+    /*Sidebar*/
+    .sidebar {
+        flex: 25%;
+        padding: 10px;
+        
+    }
+    .sticky {
+        position: sticky;
+        top: 10px;
+        align-self: flex-start;    
+}    
+/*Columns*/
+.column-wrap {
+    display:flex;
+    flex-wrap:wrap;
+    margin:auto;
+    }
+    .column { 
+        flex: 1 1 50%; 
+        padding: 5px;
+}
+
+/*BASIC TEXT, LIKE BODY, P, A, H, FONTS, ETC.*/
+/*Fonts*/
+@font-face {
+    font-family: Patrick-Hand;
+    src: url('/assets/fonts/PatrickHand-Regular.ttf');
+}
+
+@font-face {
+    font-family: ShortStack;
+    src: url('/assets/fonts/ShortStack-Regular.ttf');
+}
+
+body {
+    font-family: "ShortStack", "Arial", sans-serif;
+    color:var(--txt);
+    background-color:var(--background);
+    background-image: var(--background-img);
+    font-size: 1.125rem;
+    background-attachment: fixed;
+}
+
+h1, h2 {
+    font-family: "Patrick-Hand", "Arial", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+h3, h4 {
+    font-family: "Patrick-Hand", "Arial", sans-serif;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+p {
+    margin-bottom:10px;
+}
+
+ul,
+ol {
+    margin-bottom:10px;
+    margin-left: 20px;
+    }
+    ul ul {
+    margin-bottom: 0px;
+    }
+    ul li {
+    margin-bottom: 5px;
+    }
+    .tabwrap ul li {
+        margin-bottom: 10px;
+}
+
+/*Again, wasn't sure where these best went, decided to keep them with the main ul*/
+    .top-menu ul {
+        margin-left: 30px;
+    }
+    .sidebar ul {
+        margin-left: 10px;
+    }
+
+ul li::marker {
+    content: '\2605   ';
+    font-size: 0.9375rem;
+    } 
+    form ul li::marker {
+        content: '';
+} 
+
+a {
+    color:var(--link);
+    }
+    a:hover {
+        font-weight: bold;
+    }
+    /*next two blocks were done by https://flamedfury.com/ with minor edits. They add a little arrow after links that take you off-site.*/
+    a[href^='http']:not([href^="https://your-local-grubdog.neocities.org/"]):not(:has(img)) {
+        padding-right: .8em;
+    }
+
+    a[href^='http']:not([href^="https://your-local-grubdog.neocities.org/"]):not(:has(img))::after {
+        content: '\2197';
+        position: absolute;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin-left: 0.25em;
+        font-size: 0.8em;
+}
+
+/*CLASSES THAT ONLY EDIT TEXT (I.E., CENTER TEXT)*/
+
+.center {
+    text-align: center;
+}
+
+.big-txt {
+    font-size: 1.2em;
+}
+
+/*CLASSES THAT ONLY EDIT IMAGES (I.E., RESPONSIVE IMAGES*/
+
+/*Add this class to images to make them scale down if needed, but never scale up*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+}
+
+.head-img {
+    margin: -5px -20px 5px -5px;
+    max-width: 100%;
+    height: auto;
+}
+
+/*SEMANTIC ELEMENTS, OTHER CLASSES, IDs, AND THEIR SPECIAL TEXT*/
+/*Semantics*/
+header,
+.sidebar nav,
+aside  {
+    background-color:var(--box);
+    background-image: var(--box-texture);
+    border: solid 4px #130700;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 10px 20px 1px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 5px var(--shadow);
+}
+/*Following two bits make the side nav dissapear on small screens and the top nav appear at the top; this works in conjunction with the ".top-menu" class*/
+    .sidebar nav {
+        display:block;
+    }
+    @media screen and (max-width: 950px) {
+        .sidebar nav {
+            display:none;
+        }
+}
+
+section{
+    background-color:var(--box);
+    background-image: var(--box-texture);
+    border: solid 4px #130700;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 10px 20px 1px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 5px var(--shadow);
+    transform: rotate(-0.002turn);
+}
+    section:nth-of-type(odd){
+        transform: rotate(0.003turn);
+    }
+    section h2{
+        margin-top: 20px;
+    }    
+    section h1{
+        font-size:2em; /*Because it broke for some reason lmao*/
+}
+
+@media screen and (max-width: 950px) {
+    section{
+        transform: rotate(0turn);
+    }
+    section:nth-of-type(odd) {
+        transform: rotate(0turn);
+    }
+}
+
+/*figure {
+    margin: -5px -20px 5px;
+}*/
+
+footer {
+    background-color:var(--top-box);
+    border-style: solid hidden hidden hidden;
+    border-color: #130700;
+    color:var(--txt);
+    box-shadow: 0px -7px 5px -1px var(--shadow);
+    position:absolute; 
+    width: 100%;
+}
+    footer p {
+        padding-top: 5px;
+    }
+    footer a {
+        color:var(--link2);
+}
+
+button{
+    background-color: var(--btn);
+    color: var(--btn-txt);
+    text-align: center;
+    text-decoration: none;
+    border-style: solid;
+    border-color: #130700;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+}
+    button a {
+        color: var(--btn-txt);
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+    button:hover,
+    button:hover a {
+        color: var(--btn-hover-txt);
+        background: var(--btn-hover);
+}    
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--txt);
+    margin: 1em 0;
+    padding: 0;
+}
+
+time { 
+    font-weight: bold;
+}
+
+textarea {
+    background-color: var(--scroll-box);
+    color: var(--scroll-box-txt);
+    margin-bottom: 5px;
+    height: auto;
+    border-color: #130700;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+summary, details {
+    margin-bottom: 5px;
+}
+
+/*Other classes*/
+/*Top most box with skip content links*/
+.top-box {
+    background-color:var(--top-box);
+    border-style: hidden hidden solid hidden;
+    border-color: #130700;
+    color:var(--txt);
+    box-shadow: 0px 7px 5px -1px var(--shadow);
+}
+    .top-box a {
+        color:var(--link2);
+        text-decoration: none;
+    }
+    .top-box details {
+        cursor: pointer;
+    }
+    .top-box p {
+        margin-bottom:0px;
+    }
+    @media screen and (max-width: 950px) {
+        .top-box {
+            position: sticky;
+            top: -1px;
+            z-index: 2;
+        }
+}
+
+/*The next two sections of code make the top-most box display a menu only when the screen is under a certaian size. Need to play more with what that size is to get a good one.*/
+    .top-menu {
+        display:none;
+    }
+        @media screen and (max-width: 950px) {
+            .top-menu {
+                display:block;
+            }
+            #hide {
+                display:none;
+            }
+}
+
+/*Javascript-free tabs, curtosy of KaleChips: https://kalechips.net/projects/snippets.php?p=tabs*/
+.tabwrap article {
+	display: none;
+}
+    .tabwrap article:target {
+	    display:block;
+}
+
+.scroll-box {
+    background-color: var(--scroll-box);
+    color: var(--scroll-box-txt);
+    border-color: #130700;
+    border-style: solid;
+    border-radius: 5px;
+    height: 250px;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+} 
+    .scroll-box a {
+        color: var(--scroll-box-link)
+    }
+
+.scroll-person {
+    background: transparent;
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+/*Adds "washi tape" to the site boxes. Code by/from https://hillhouse.neocities.org/snippets#washitape with changes made so it plays nice with my layout lol*/
+.taped::before {
+    background-image:url('/assets/img/scales_tape.png');
+    background-repeat:no-repeat;
+    display:block;
+    content:" ";
+    position:absolute;
+    height:50px;
+    width:150px;
+  background-size:contain;
+    top:-30px;
+    left:40%;
+}
+/*Gives the tape psudo-randomness*/
+    .taped:nth-of-type(even)::before {
+        background-image:url('/assets/img/star_tape.png'); /*This is a good one to use for size ref, it plays nice w/ the boxes*/
+        left:5% 
+        }
+    .taped:nth-of-type(3n)::before {
+        background-image:url('/assets/img/leaf_tape.png'); 
+        left:70%  
+        }
+        @media screen and (max-width: 950px) {
+            .taped:nth-of-type(3n)::before {
+                background-image:url('/assets/img/leaf_tape.png'); 
+                left:50%  
+                }
+        }    
+    .taped:nth-of-type(4n)::before, .taped ~ div .taped:nth-of-type(6n)::before {
+        background-image:url('/assets/img/moth_tape.png');
+        left:20% 
+    }
+    .taped:nth-of-type(5n)::before {
+        background-image:url('/assets/img/carrot_tape.png');
+        left:40%     
+}
+/*Neded to make the tape behave on the side bar*/
+    header,
+    nav,
+    aside .taped::before  {
+        position:relative;
+    }
+/*Corner tape left*/
+    .cornertapedL.taped::before {
+        background-image:url('/assets/img/moth_tape.png');
+        top:-30px;
+        left:-40px;
+        transform:rotate(-25deg)
+    }
+    .cornertapedR.taped::before {
+        background-image:url('/assets/img/leaf_tape.png');
+        top:-25px;
+        left:65%;
+        transform:rotate(+15deg)
+    }
+    .Ttaped.taped::before {
+        background-image:url('/assets/img/carrot_tape.png');
+        top:-30px;
+        left:40%;  
+    }    
+/*tape for top of hoard spesifically, as the tabs "reset" the rando counter*/
+    .hoardtape.taped::before {
+        background-image:url('/assets/img/leaf_tape.png');
+        left: 6%;
+        top: -20px;
+}
+
+/*WIDGET CODE - CSS FOR OFF-SITE CODE*/
+/*Status Cafe*/
+#statuscafe {
+    margin-bottom: 5px;
+}
+#statuscafe-username a {
+    display: none;
+}

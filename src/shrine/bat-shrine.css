@@ -19,7 +19,7 @@
 }
 
 	body {
-    font-family: "Atkinson Hyperlegible", "Arial", sans-serif;
+    font-family: "Arial", sans-serif;
     color: black;
     background-image: url("https://sadhost.neocities.org/images/tiles/graybat.png");
     font-size: 18px;
@@ -53,7 +53,7 @@ p {
 }
 
 h1, h2 {
-    font-family: "ubuntu", "Atkinson Hyperlegible", "Arial", sans-serif;
+    font-family: "Arial", sans-serif;
     margin-bottom: 20px;
 }
   
