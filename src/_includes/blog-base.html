@@ -4,9 +4,9 @@ data: collections.posts
 ---
 <section class="taped">
 <article>
-        <div class="nomargin"><h1> {{ title }} </h1> </div>
-        <h2> {{ dateString }} </h2>
-                <p>{{ content }}</p>
+        <h1> {{ title }} </h1>
+        <h2> {{ page.date| date: '%B %d, %Y'  }} </h2>
+                {{ content }}
                 <div class="center big-txt"><a href="/blog">Blog Home</a> - <a href="/blog#tags">Blog Tags</a> - <a href="/feed.xml">RSS Feed</a></div>
 </article>
 </section>

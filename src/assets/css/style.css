@@ -120,14 +120,11 @@ body {
 
 h1, h2 {
     font-family: "Patrick-Hand", "Arial", sans-serif;
-    margin-bottom: 10px;
-    margin-top: 10px;
 }
+
 
 h3, h4 {
     font-family: "Patrick-Hand", "Arial", sans-serif;
-    margin-bottom: 5px;
-    margin-top: 5px;
 }
 
 p {
@@ -255,10 +252,7 @@ section{
 }
     section:nth-of-type(odd){
         transform: rotate(0.003turn);
-    }
-    section h2{
-        margin-top: 20px;
-    }    
+    }  
     section h1{
         font-size:2em; /*Because it broke for some reason lmao*/
 }
@@ -294,6 +288,7 @@ footer {
 
 button{
     background-color: var(--btn);
+    font-family: "ShortStack", "Arial", sans-serif;
     color: var(--btn-txt);
     text-align: center;
     text-decoration: none;
@@ -313,6 +308,8 @@ button{
     button:hover a {
         color: var(--btn-hover-txt);
         background: var(--btn-hover);
+        font-weight: bold;
+        cursor: pointer;
 }    
 
 hr {
