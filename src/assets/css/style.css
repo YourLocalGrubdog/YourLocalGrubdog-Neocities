@@ -339,6 +339,22 @@ summary, details {
     margin-bottom: 5px;
 }
 
+blockquote {
+    background-color: var(--background);
+    font-style: italic;
+    margin: 0px 100px 10px 100px;
+    padding: 10px 15px 15px 15px;
+    box-shadow: 5px 5px 5px var(--shadow);
+    transform: rotate(-0.002turn);
+}
+
+@media screen and (max-width: 950px) {
+    blockquote{
+        transform: rotate(0turn);
+        margin: 0px 50px 10px 50px;
+    }
+}
+
 /*Other classes*/
 /*Top most box with skip content links*/
 .top-box {
