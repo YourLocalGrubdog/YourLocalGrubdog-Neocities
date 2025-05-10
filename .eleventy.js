@@ -5,6 +5,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/assets");
   eleventyConfig.addPassthroughCopy("./src/shrine");
   eleventyConfig.addWatchTarget("./src/shrine");
+  eleventyConfig.addPassthroughCopy("./src/layouts");
+  eleventyConfig.addWatchTarget("./src/layouts");
   eleventyConfig.addPlugin(feedPlugin, {
 	type: "rss", // or "atom", "json"
 	outputPath: "/feed.xml",

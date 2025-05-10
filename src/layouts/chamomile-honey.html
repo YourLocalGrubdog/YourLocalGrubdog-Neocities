@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamomile Honey Tea</title>
+    <link rel="stylesheet" href="/layouts/chamomile-honey.css">
+    <link rel="shortcut icon" href="/" type="image/x-icon">
+  </head>
+  <body>
+    <header><h1 id="top">Chamomile Honey Tea</h1></header>
+    <nav><p>Back to Layouts &#10047; Back to Site</p></nav>
+   <main>
+    <section>
+        <h2>Intro</h2>
+        <p>Chamomile Honey Tea is a CSS framework/theme made for the <a href="https://32bit.cafe/spring25/" target="_blank">32-Bit Cafe Spring 2025 Tea Party</a>! This framework includes just about all of the semantic CSS needed for a site (the chamomile tea), plus a few classes thrown in for flavor (the honey). It'll be up to you, however, to code some HTML. <strong>This is, after all, geared towrards those who are still learning!</strong> All of the classes will be explained, but feel free to refrence the HTML of this page if you ever feel stuck!</p>
+        <p>This framework is responsive by default. It also detects light/dark mode prefrence and will change colors accordingly.</p>
+        <p>This is also completely free to use. No copyright. Have fun. Though, credit would be nice, if only so others can also find the cool free resource :3</p>
+        <p>Enough yapping, it's time to show off everything that Chamomile Honey Tea can do!</p>
+    </section>
+    <section>
+        <h2>Header, Nav, Footer</h2>
+        <p>If you look at the very <a href="#top">top</a> and <a href="#bottom">bottom</a> of the page, you'll find a header and footer. Neat stuff. If you want to add them, you can do so with <code>header</code> as the first thing after <code>body</code> and <code>footer</code> as the last thing before <code>/body</code></p>
+    </section>
+    <section>
+        <h2>Other Semantics</h2>
+        <p>This is a paragraph. Beautiful. The entire theme has padding. Links will look like this: <a href="https://32bit.cafe/" target="_blank">32-Bit Cafe</a>. They change color once you visit the site/page.</p>
+        <p>Fair warning to anyone using a screen reader, what follows is a list of all headings for sake of example.</p>
+        <h1>Header Level 1</h1>
+        <h2>Header Level 2</h2>
+        <h3>Header Level 3</h3>
+        <h4>Header Level 4</h4>
+        <h5>Header Level 5</h5>
+        <h6>Header Level 6</h6>
+        <p>Both the headers and the main text use a web-safe font, so they should work no matter what.</p>
+        <p>Also, by default, there's a bee emoji next to level one headers. I recognize that will look diffrent on each device and browser. If you don't want it, here's the CSS to get rid of. Also, this is what code blocks look like!</p>
+<pre><code>h1:before {
+    content:'\1F41D';
+}
+</code></pre>
+<!-- As you see, the code in the code block doesn't align with the rest of my code. This is because the codeblock will include all of those indentions! Not something we want. Maybe. I don't know how you want your site to look.-->
+        <p>Here's an unordered list featuring font variations:</p>
+        <ul>
+            <li><em>Italic text</em></li>
+            <li><strong>Bold text</strong></li>
+            <li><s>Text that has been struck through</s></li>
+            <li><mark>Highlighted text</mark></li>
+            <li><u>Underlined text.</u> Please use sparingly, as having multiple lines of it will make text hard to read!</li>
+            <li>Last but not least, <code>in-line code</code></li>
+        </ul>
+        <p>And just for completions sake, an ordered list:</p>
+        <ol>
+            <li>I don't have anything to rank</li>
+            <li>So this isn't as useful as last time</li>
+            <li>Oops</li>
+            <li>But hey we can do nested lists!</li>
+                <ol><li>Like this!</li></ol>
+            <li>Nested lists can also come in the flavor of unordered lists!</li>
+                <ul><li>How tasty</li></ul>
+            </ol>
+        <p>We also have blockquotes for all of your block quote needs.</p>
+        <blockquote>
+            <p>Hm. I need to fill this somehow. Uh, I chose the theme of chamomile honey because it's my favorite tea! I just put honey in plain chamomile and am one happy man. Normal honey, that is. Recently my brother discovered spicy honey. It was gross. Would NOT put that in tea.</p>
+        </blockquote>
+        <p>Tables are fun, too!</p> 
+        <table> <!-- And rough. Take your time, and check the MDN docs if comparing my code to the page dosn't help. -->
+            <caption>Frogs and their Favorite Teas</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Frog</th>
+                    <th scope="col">Tea</th>
+                    <th scope="col">Reason?</th>
+                    <th scope="col">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Tree Frog</th>
+                    <td scope="row">Peppermint</td>
+                    <td scope="row">Very plentiful in the forest</td>
+                    <td scope="row">Mint infestation in their forest.</td>
+                </tr>
+                <tr>
+                    <th scope="row">Pond Frog</th>
+                    <td scope="row">Matcha</td>
+                    <td scope="row">The aesthetic ngl</td>
+                    <td scope="row">On their phone entire time we were talking.</td>
+                </tr>
+                <tr>
+                    <th scope="row">Desert Rain Frog</th>
+                    <td scope="row">Hibiscus</td>
+                    <td scope="row">None of your buisness >:&lpar;</td>
+                    <td scope="row">VERY rude.</td>
+                </tr>                            
+                <tr>
+                    <th scope="row">Me :&rpar;</th>
+                    <td scope="row">Chamomile</td>
+                    <td scope="row">Tasty</td>
+                    <td scope="row">Actually a dragon. Mistakes were made.</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <th scope="row" colspan="4"><strong>Disclaimer:</strong> Not scientificaly acurate at all. Do not give frogs tea.</th>
+            </tfoot>
+        </table>
+        <p>Images will be responsive by default; once the screen gets too small for them they'll just shrink.</p>
+        <figure><img src="chamonile_house.jpg" alt="greyscale photo of a house with chamomile growing on a turf roof" width="800px" class="center-img"></figure>
+        <figcaption>An Icelandic turf house with chamomile growing on the turf. Image is from <a href="https://commons.m.wikimedia.org/wiki/File:In_older_Reykjav%C3%ADk._House_covered_with_chamonile._(4558306161).jpg" target="_blank">Wikimedia</a>. Also, this is how figure captions look!</figcaption>
+        <p>Bonus and early class: here's one just for images that can be used to center them if desired! Just put this in the code:</p>
+<pre><code>&lt;img src="image.file" alt="alt text is important!" class="center-img"&gt;</code></pre>
+        <p>Where the <code>class="center-img"</code> goes in the order doesn't matter <em>too</em> much, so long as you have a pattren and stick to it. Makes editing code easier. Trust me.</p>
+        <p>While this framework is free for anyone to use, it really is geared towrards beginners and hobbiests. So I debated if I really wanted a bunch of text input feilds and menus. In the end, I decided to go for minimal options. I don't see hobby sites needing much more than these, but I may add more if asked!</p>
+        <p>Just know these will have little use without Javascript (or some <em>very</em> clever CSS).</p>
+        <p>Text boxes:</p>
+        <p><label for="small">Small:</label> <input type="text" placeholder="Placeholder"></p>
+        <p><label for="large">Large:</label><br>
+            <textarea cols="50" rows="10" id="textarea" placeholder="Placeholder"></textarea></p>
+        <p>Radio Selection:</p>
+        <fieldset>
+            <legend>Can only choose one!</legend>
+            <div> <!-- The divs are needed to make the options stack on one another. If you want them side-by-side, though, then feel free to remove them.-->
+                <input type="radio" id="so" name="one"/> <label for="so">So</label>
+            </div>
+            <div>
+                <input type="radio" id="make" name="one"/> <label for="make">Make</label>
+            </div>
+            <div>
+                <input type="radio" id="it" name="one"/> <label for="it">It</label>
+            </div>
+            <div>
+                <input type="radio" id="count" name="one"/> <label for="count">Count</label>
+            </div>
+        </fieldset>
+        <p>We also got a button!</p>
+        <button>Beep boop</button>
+        <p>Oh, and just because I don't have a better place to put it: you can make a large text area without it being an input and then fill it with your own text. This is commonly used to share text to be copy/pasted.</p>
+        <p>To end this section off, I'll go ahead and show off a horizontal rule! It has a nice little flower. We can pretend it's a chamomile flower.</p>
+        <hr>
+    </section>
+    <section>
+        <h2>Classes</h2>
+        <h3>Box</h3>
+        <div class="box">
+            <p>This is a box you can put things in. Nifty! How/if you use it is up to you. It's a diffrent color, so things look a little diffrent in here. For example, text is darker. Links have also been tweaked for better contrast, as you can see here: <a href="https://32bit.cafe/" target="_blank">32-Bit Cafe</a>. <a href="#bottom">bott</a></p>
+            <p>Here's a line break to show how that looks in a box.</p>
+            <hr>
+            <h4>Do headings still look okay?</h4>
+            <p>Yes! As should everything else. The code for a box is as follows:</p>
+<pre><code>&lt;div class="box"&gt;
+    &lt;p&gt;Whatever you want here tbh.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <h3>Scroll Box</h3>
+        <div class="scroll">
+            <p>I'm full of text! So much so that you have to scroll in order to see all of it! Handy for some situations, probably. These are the same color as code blocks, so while you could put a code block in here it won't be visable. So the code block is going to come after for the sake of readability. Plus, the code blocks will scroll horizontalally when overfilled... yeah that would be a nightmare to navigate. Hm, still haven't hit the scroll minimum on my biggest screen yet. About that spicy honey from earlier: it didn't even taste like honey. Just spicy. Like, why would you ruin perfectly good honey like that??? It had all the downsides of honey (sticky) with none of the upsides (uniqe sweet flavor). So strange.</p>
+        </div>
+        <p>Code for a scroll box is as follows:</p>
+<pre><code>&lt;div class="scroll"&gt;
+    &lt;p&gt;Yeah the class names are very simple, still I wanna show them off like this. Feels like the best way to me.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        <h3>Flexbox</h3>
+        <p>If desired, you can use flexbox to get some more complex layouts with this framework. I'll put the box class inside of it to make it more visable, but this is optional.</p>
+        <div class="container">
+            <div class="half"><div class="box">Half width box!</div></div>
+            <div class="half"><div class="box">Another half width box!</div></div>
+            <div class="third"><div class="box">Third width box!</div></div>
+            <div class="twothird"><div class="box">Two-thirdss width box!</div></div>
+            <div class="threequarter"><div class="box">Three-fourths width box!</div></div>
+            <div class="quarter"><div class="box">One-fourth width box!</div></div>
+            <div class="quarter"><div class="box">You can also put four tiny ones together.</div></div>
+            <div class="quarter"><div class="box">Like this!</div></div>
+            <div class="quarter"><div class="box">Whatver you want, really.</div></div>
+            <div class="quarter"><div class="box">This framework is your oyster.</div></div>
+        </div>
+        <p>How you arange them is up to you, but so long as it equals a whole it should look okay! Just know that heights are not gurenteed to match, as you can probably see.</p>
+        <p>The code block for this is as follows:</p>
+<pre><code>&lt;div class="container"&gt;
+    &lt;div class="half"&gt;This is just for one half&lt;/div&gt;
+    &lt;div class="third"&gt;This is for a third&lt;/div&gt;
+    &lt;div class="twothird"&gt;And two-thirds&lt;/div&gt;
+    &lt;div class="threequarter"&gt;Three quarters...&lt;/div&gt;
+    &lt;div class="quarter"&gt;And last, and technically least, just one quarter!&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <p>And... that's about it! These are just about all the pices needed to make a site :D If you need help or have any questions, please feel free to let me know! ^^</p>
+    </section>
+    </main>
+    <footer id="bottom">
+        <p>This is a footer. Wow. Want to return to the <a href="#top">top</a> of the page?</p>
+    </footer>
+    </body>
+</html>
