@@ -313,6 +313,10 @@ input[type=radio] label {
 }
   
 /*CLASSES*/
+.center {
+    text-align: center;
+}
+
 .box{
     background-color:var(--box);
     color: var(--boxtxt);
