@@ -65,7 +65,7 @@
         </blockquote>
         <p>Tables are fun, too!</p> 
         <table> <!-- And rough. Take your time, and check the MDN docs if comparing my code to the page dosn't help. -->
-            <caption>Frogs and their Favorite Teas</caption>
+            <caption class="center-img">Frogs and their Favorite Teas</caption> <!-- The center-img class is to make the centering behave on mobile in particular; while the class is intended for images, and REALLY should only be used for them, you can occasinally get away with using it for other things like this. -->
             <thead>
                 <tr>
                     <th scope="col">Frog</th>
@@ -76,28 +76,28 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">Tree Frog</th>
-                    <td scope="row">Peppermint</td>
-                    <td scope="row">Very plentiful in the forest</td>
-                    <td scope="row">Mint infestation in their forest.</td>
+                    <th scope="row" data-label="Frog">Tree Frog</th> <!-- data labels are needed to make the table behave on small screens -->
+                    <td scope="row" data-label="Favorite Tea">Peppermint</td>
+                    <td scope="row" data-label="Reason?">Very plentiful in the forest</td>
+                    <td scope="row" data-label="Notes">Mint infestation in their forest.</td>
                 </tr>
                 <tr>
-                    <th scope="row">Pond Frog</th>
-                    <td scope="row">Matcha</td>
-                    <td scope="row">The aesthetic ngl</td>
-                    <td scope="row">On their phone entire time we were talking.</td>
+                    <th scope="row" data-label="Frog">Pond Frog</th>
+                    <td scope="row" data-label="Favorite Tea">Matcha</td>
+                    <td scope="row" data-label="Reason?">The aesthetic ngl</td>
+                    <td scope="row" data-label="Notes">On their phone the entire time.</td>
                 </tr>
                 <tr>
-                    <th scope="row">Desert Rain Frog</th>
-                    <td scope="row">Hibiscus</td>
-                    <td scope="row">None of your buisness >:&lpar;</td>
-                    <td scope="row">VERY rude.</td>
+                    <th scope="row" data-label="Frog">Desert Rain Frog</th>
+                    <td scope="row" data-label="Favorite Tea">Hibiscus</td>
+                    <td scope="row" data-label="Reason?">None of your buisness >:&lpar;</td>
+                    <td scope="row" data-label="Notes">VERY rude.</td>
                 </tr>                            
                 <tr>
-                    <th scope="row">Me :&rpar;</th>
-                    <td scope="row">Chamomile</td>
-                    <td scope="row">Tasty</td>
-                    <td scope="row">Actually a dragon. Mistakes were made.</td>
+                    <th scope="row" data-label="Frog">Me :&rpar;</th>
+                    <td scope="row" data-label="Favorite Tea">Chamomile</td>
+                    <td scope="row" data-label="Reason?">Tasty</td>
+                    <td scope="row" data-label="Notes">Actually a dragon.</td>
                 </tr>
             </tbody>
             <tfoot>
