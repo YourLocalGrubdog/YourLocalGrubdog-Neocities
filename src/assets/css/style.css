@@ -128,12 +128,12 @@ h3, h4 {
 }
 
 p {
-    margin-bottom:10px;
+    margin: 10px auto;
 }
 
 ul,
 ol {
-    margin-bottom:10px;
+    margin-bottom:20px;
     margin-left: 20px;
     }
     ul ul {
@@ -286,7 +286,30 @@ footer {
         color:var(--link2);
 }
 
-button{
+.quizz label {
+    background: rgba(0,0,0,0);
+    color: var(--txt);
+    border-style: none;
+    text-align: left;
+    padding: .01rem;
+    margin: .01rem;
+}
+
+.quizz input[type="radio"] {
+    margin: 1rem 0rem .5rem 1.5rem;
+    appearance: none;
+    border-radius: 50%;
+    width: .9rem;
+    height: .9rem;
+    border: .15rem solid var(--txt);
+    position: relative;
+    top: .4rem;
+    }
+    .quizz input[type="radio"]:not(:disabled):checked {
+        border: .45rem solid var(--link);
+}
+
+button, label{
     background-color: var(--btn);
     font-family: "ShortStack", "Arial", sans-serif;
     color: var(--btn-txt);
