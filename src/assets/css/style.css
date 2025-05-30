@@ -1,3 +1,4 @@
+/*ROOT*/
 /*color guide
   --dark brown: #655435;
   --light brown: #D4CFBA;
@@ -50,9 +51,10 @@
 	  /*images*/
       --background-img: url(/assets/img/wild-flowers_dark.png);
       --box-texture: url(/assets/img/natural-paper_dark.png); /*dark mode version of this texture wanted to make it less obvious*/
-	}
+    }
 }
-/*Forces the site to play nice on all browsers*/
+
+/*UNIVERSAL, resets CSS*/
 * {
     margin: 0;
     padding: 0;
@@ -64,51 +66,38 @@
     box-sizing: border-box;
 }
 
-/*Flex Box*/
+/*FONT IMPORTS*/
+@font-face {
+    font-family: Patrick-Hand;
+    src: url('/assets/fonts/PatrickHand-Regular.ttf');
+}
+@font-face {
+    font-family: ShortStack;
+    src: url('/assets/fonts/ShortStack-Regular.ttf');
+}
+
+/*FLEX BOX*/
 .container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 } 
-    /*Main Content*/
     .maincontent {
         flex: 75%;
-        padding: 10px;
+        padding: 2vh;
     }
-    /*Sidebar*/
     .sidebar {
         flex: 25%;
-        padding: 10px;
+        padding: 2vh;
         
     }
     .sticky {
         position: sticky;
         top: 10px;
         align-self: flex-start;    
-}    
-/*Columns*/
-.column-wrap {
-    display:flex;
-    flex-wrap:wrap;
-    margin:auto;
-    }
-    .column { 
-        flex: 1 1 50%; 
-        padding: 5px;
 }
 
-/*BASIC TEXT, LIKE BODY, P, A, H, FONTS, ETC.*/
-/*Fonts*/
-@font-face {
-    font-family: Patrick-Hand;
-    src: url('/assets/fonts/PatrickHand-Regular.ttf');
-}
-
-@font-face {
-    font-family: ShortStack;
-    src: url('/assets/fonts/ShortStack-Regular.ttf');
-}
-
+/*OTHER SEMANTICS (and classes inter-linked with semantics)*/
 body {
     font-family: "ShortStack", "Arial", sans-serif;
     color:var(--txt);
@@ -118,136 +107,17 @@ body {
     background-attachment: fixed;
 }
 
-h1, h2 {
-    font-family: "Patrick-Hand", "Arial", sans-serif;
-}
-
-
-h3, h4 {
-    font-family: "Patrick-Hand", "Arial", sans-serif;
-}
-
-p {
-    margin: 10px auto;
-}
-
-ul,
-ol {
-    margin-bottom:20px;
-    margin-left: 20px;
-    }
-    ul ul {
-    margin-bottom: 0px;
-    }
-    ul li {
-    margin-bottom: 5px;
-    }
-    .tabwrap ul li {
-        margin-bottom: 10px;
-}
-
-/*Again, wasn't sure where these best went, decided to keep them with the main ul*/
-    .top-menu ul {
-        margin-left: 30px;
-    }
-    .sidebar ul {
-        margin-left: 10px;
-    }
-
-ul li::marker {
-    content: '\2605   ';
-    font-size: 0.9375rem;
-    } 
-    form ul li::marker {
-        content: '';
-} 
-
-a {
-    color:var(--link);
-    }
-    a:hover {
-        font-weight: bold;
-    }
-    /*next two blocks were done by https://flamedfury.com/ with minor edits. They add a little arrow after links that take you off-site.*/
-    a[href^='http']:not([href^="https://your-local-grubdog.neocities.org/"]):not(:has(img)) {
-        padding-right: .8em;
-    }
-
-    a[href^='http']:not([href^="https://your-local-grubdog.neocities.org/"]):not(:has(img))::after {
-        content: '\2197';
-        position: absolute;
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        margin-left: 0.25em;
-        font-size: 0.8em;
-}
-
-/*CLASSES THAT ONLY EDIT TEXT (I.E., CENTER TEXT)*/
-
-.center {
-    text-align: center;
-}
-
-.big-txt {
-    font-size: 1.2em;
-    margin-bottom:10px;
-}
-
-/*CLASSES THAT ONLY EDIT IMAGES (I.E., RESPONSIVE IMAGES*/
-
-/*Add this class to images to make them scale down if needed, but never scale up*/
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.center-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80%;
-}
-
-.head-img {
-    margin: -5px -20px 5px -5px;
-    max-width: 100%;
-    height: auto;
-}
-
-/*SEMANTIC ELEMENTS, OTHER CLASSES, IDs, AND THEIR SPECIAL TEXT*/
-/*Semantics*/
-header,
-.sidebar nav,
-aside  {
+header, .sidebar nav, aside, section  {
     background-color:var(--box);
     background-image: var(--box-texture);
     border: solid 4px #130700;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    padding: 10px 20px 1px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    padding: 2vh;
+    margin: 20px 0px 30px;
     box-shadow: 5px 5px 5px var(--shadow);
-}
-/*Following two bits make the side nav dissapear on small screens and the top nav appear at the top; this works in conjunction with the ".top-menu" class*/
-    .sidebar nav {
-        display:block;
-    }
-    @media screen and (max-width: 950px) {
-        .sidebar nav {
-            display:none;
-        }
 }
 
-section{
-    background-color:var(--box);
-    background-image: var(--box-texture);
-    border: solid 4px #130700;
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    padding: 10px 20px 1px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    box-shadow: 5px 5px 5px var(--shadow);
+section {
     transform: rotate(-0.002turn);
 }
     section:nth-of-type(odd){
@@ -255,20 +125,10 @@ section{
     }  
     section h1{
         font-size:2em; /*Because it broke for some reason lmao*/
-}
-
-@media screen and (max-width: 950px) {
-    section{
-        transform: rotate(0turn);
-    }
-    section:nth-of-type(odd) {
-        transform: rotate(0turn);
+    section p {
+        text-indent: 4rem;
     }
 }
-
-/*figure {
-    margin: -5px -20px 5px;
-}*/
 
 footer {
     background-color:var(--top-box);
@@ -280,12 +140,125 @@ footer {
     width: 100%;
 }
     footer p {
-        padding-top: 5px;
+        margin: 0.5rem;
+        text-align: center;
+        max-width: 100%;
     }
     footer a {
         color:var(--link2);
 }
 
+textarea {
+    background-color: var(--scroll-box);
+    color: var(--scroll-box-txt);
+    margin-bottom: 5px;
+    height: auto;
+    border-color: #130700;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+summary, details {
+    margin-bottom: 5px;
+}
+
+blockquote {
+    background-color: var(--background);
+    font-style: italic;
+    margin: 0px 100px 10px 100px;
+    padding: 10px 15px 15px 15px;
+    box-shadow: 5px 5px 5px var(--shadow);
+    transform: rotate(-0.002turn);
+}
+
+/*GENERAL FORMATTING*/
+p {
+    max-width: 80ch;
+    line-height: 1.6rem;
+    margin-top: 1rem;
+}
+
+a {
+    color:var(--link);
+    }
+    a:hover {
+        font-weight: bold;
+    }
+    /*next two blocks were done by https://flamedfury.com/ with minor edits. They add a little arrow after links that take you off-site.*/
+    a[href^='http']:not([href^="https://your-local-grubdog.neocities.org/"]):not(:has(img)) {
+        padding-right: .8rem;
+    }
+
+    a[href^='http']:not([href^="https://your-local-grubdog.neocities.org/"]):not(:has(img))::after {
+        content: '\2197';
+        position: absolute;
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        margin-left: 0.25rem;
+        font-size: 0.8rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Patrick-Hand", "Arial", sans-serif;
+    max-width: 70ch; /*This max width should NEVER be hit, but better safe than sorry*/
+}
+
+h1 ~ h2, h3, h4 {
+    margin-left: 4rem;
+}
+
+ul,ol {
+    margin: 0 20px 0;
+    padding-left: 5rem;
+    max-width: 70ch;
+    }
+    ul ul {
+    margin-bottom: 0px;
+    }
+    ul li {
+    margin-bottom: 5px;
+    }
+    .tabwrap ul li {
+        margin-bottom: 10px;
+}
+
+ul li::marker {
+    content: '\2605   ';
+    font-size: 0.9375rem;
+    } 
+    form ul li::marker {
+        content: '';
+} 
+
+/*Wasn't sure where this best went, decided to keep it with the main ul*/
+    .top-menu ul {
+        margin-left: 0;
+    }
+    .sidebar ul {
+        margin-left: -3rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 0.3rem;
+}
+
+time { 
+    font-weight: bold;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--txt);
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*INTERACTIVE/FUNCTIONAL*/
 .quizz label {
     background: rgba(0,0,0,0);
     color: var(--txt);
@@ -307,6 +280,10 @@ footer {
     }
     .quizz input[type="radio"]:not(:disabled):checked {
         border: .45rem solid var(--link);
+}
+
+.quizz ul {
+    margin-left: -3rem;
 }
 
 button, label{
@@ -333,53 +310,30 @@ button, label{
         background: var(--btn-hover);
         font-weight: bold;
         cursor: pointer;
-}    
+}
 
-hr {
+/*CLASSES*/
+/*Has skip to links + site map links, plus mobile nav*/
+.top-menu {
+    display:none;
+}
+
+.center {
+    text-align: center;
+}
+
+.center-img {
     display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid var(--txt);
-    margin: 1em 0;
-    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
 }
 
-time { 
-    font-weight: bold;
+.big-txt {
+    font-size: 1.2em;
+    margin-bottom:10px;
 }
 
-textarea {
-    background-color: var(--scroll-box);
-    color: var(--scroll-box-txt);
-    margin-bottom: 5px;
-    height: auto;
-    border-color: #130700;
-    border-style: solid;
-    border-radius: 5px;
-}
-
-summary, details {
-    margin-bottom: 5px;
-}
-
-blockquote {
-    background-color: var(--background);
-    font-style: italic;
-    margin: 0px 100px 10px 100px;
-    padding: 10px 15px 15px 15px;
-    box-shadow: 5px 5px 5px var(--shadow);
-    transform: rotate(-0.002turn);
-}
-
-@media screen and (max-width: 950px) {
-    blockquote{
-        transform: rotate(0turn);
-        margin: 0px 50px 10px 50px;
-    }
-}
-
-/*Other classes*/
-/*Top most box with skip content links*/
 .top-box {
     background-color:var(--top-box);
     border-style: hidden hidden solid hidden;
@@ -395,27 +349,7 @@ blockquote {
         cursor: pointer;
     }
     .top-box p {
-        margin-bottom:0px;
-    }
-    @media screen and (max-width: 950px) {
-        .top-box {
-            position: sticky;
-            top: -1px;
-            z-index: 2;
-        }
-}
-
-/*The next two sections of code make the top-most box display a menu only when the screen is under a certaian size. Need to play more with what that size is to get a good one.*/
-    .top-menu {
-        display:none;
-    }
-        @media screen and (max-width: 950px) {
-            .top-menu {
-                display:block;
-            }
-            #hide {
-                display:none;
-            }
+        margin:0px;
 }
 
 /*Javascript-free tabs, curtosy of KaleChips: https://kalechips.net/projects/snippets.php?p=tabs*/
@@ -435,11 +369,11 @@ blockquote {
     height: 250px;
     padding: 10px;
     overflow-y: scroll;
-    margin-bottom: 10px;
+    margin: 0.3rem;
 } 
     .scroll-box a {
         color: var(--scroll-box-link)
-    }
+}
 
 .scroll-person {
     background: transparent;
@@ -523,4 +457,33 @@ blockquote {
 }
 #statuscafe-username a {
     display: none;
+}
+
+/*MOBILE MODE*/
+@media screen and (max-width: 1030px) { 
+    header, .sidebar nav, aside, section  {
+    padding: 3vh;
+}
+    section{
+        transform: rotate(0turn);
+    }
+    section:nth-of-type(odd) {
+        transform: rotate(0turn);
+    }
+    .top-menu {
+                display:block;
+            }
+            #hide {
+                display:none;
+            }
+    .sidebar nav {
+            display:none;
+        }
+    blockquote{
+        transform: rotate(0turn);
+        margin: 0px 50px 10px 50px;
+    }
+    h1 {
+        text-align: center;
+    }
 }
