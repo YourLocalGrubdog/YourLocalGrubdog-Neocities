@@ -296,7 +296,7 @@ button, label{
     border-color: #130700;
     border-radius: 5px;
     padding: 10px;
-    margin: 5px;
+    margin: .3rem;
     display: inline-block;
 }
     button a {
@@ -404,13 +404,7 @@ button, label{
     .taped:nth-of-type(3n)::before {
         background-image:url('/assets/img/leaf_tape.png'); 
         left:70%  
-        }
-        @media screen and (max-width: 950px) {
-            .taped:nth-of-type(3n)::before {
-                background-image:url('/assets/img/leaf_tape.png'); 
-                left:50%  
-                }
-        }    
+        }  
     .taped:nth-of-type(4n)::before, .taped ~ div .taped:nth-of-type(6n)::before {
         background-image:url('/assets/img/moth_tape.png');
         left:20% 
@@ -438,7 +432,7 @@ button, label{
         left:65%;
         transform:rotate(+15deg)
     }
-    .Ttaped.taped::before {
+    .Ttaped.taped::before { /*top tape*/
         background-image:url('/assets/img/carrot_tape.png');
         top:-30px;
         left:40%;  
@@ -461,6 +455,7 @@ button, label{
 
 /*MOBILE MODE*/
 @media screen and (max-width: 1030px) { 
+    /*Other semantics*/
     header, .sidebar nav, aside, section  {
     padding: 3vh;
 }
@@ -470,6 +465,24 @@ button, label{
     section:nth-of-type(odd) {
         transform: rotate(0turn);
     }
+    section p {
+        text-indent: 1.5rem;
+    }
+    blockquote{
+        transform: rotate(0turn);
+        margin: 0px 50px 10px 50px;
+    }
+    /*General Formatting*/
+    h1 {
+        text-align: center;
+    }
+    h1 ~ h2, h3, h4 {
+        margin-left: 1.5rem;
+    }
+    ul, ol {
+        padding-left: 1.5rem;
+    }
+    /*Classes*/
     .top-menu {
                 display:block;
             }
@@ -479,11 +492,8 @@ button, label{
     .sidebar nav {
             display:none;
         }
-    blockquote{
-        transform: rotate(0turn);
-        margin: 0px 50px 10px 50px;
-    }
-    h1 {
-        text-align: center;
+    .taped:nth-of-type(3n)::before {
+        background-image:url('/assets/img/leaf_tape.png'); 
+        left:50%  
     }
 }
