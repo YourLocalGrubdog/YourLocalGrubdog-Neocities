@@ -9,7 +9,7 @@ pagination:
 ---
 <section class="taped">
     <div class="center"><h1>{{ title }}</h1></div>
-    {% for posts in webmastery %}
+    {% for posts in challenge %}
         <div class="nomargin"><h2><a href="{{ posts.url }}">{{ posts.data.title }}</a></h2>
         <h3>{{ posts.data.date | date: '%B %d, %Y' }}</h3></div>
         <p>{{ posts.data.description }} <a href="{{ posts.url }}">Read More</a></p>
