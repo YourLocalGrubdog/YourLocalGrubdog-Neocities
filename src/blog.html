@@ -14,6 +14,7 @@ pagination:
         <div class="nomargin"><h2><a href="{{ posts.url }}">{{ posts.data.title }}</a></h2>
         <h3>{{ posts.data.date | date: '%B %d, %Y' }}</h3></div>
         <p>{{ posts.data.description }} <a href="{{ posts.url }}">Read More</a></p>
+        <hr class="center-img">
     {% endfor %}
     
     <p>{% if pagination.href.previous %}<button><a href="{{ pagination.href.previous}}"><strong>Newer Posts</strong></a></button>{% endif %} {% if pagination.href.next %}<button><a href="{{ pagination.href.next }}"><strong>Older Posts</a></strong></button>{% endif %}</p>
