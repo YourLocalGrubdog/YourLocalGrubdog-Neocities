@@ -201,6 +201,9 @@ figcaption {
   body {
      background-image: linear-gradient(var(--darkblue), #0f4c6e);
   }
+  .scroll-box {
+    height: 70vh;
+  }
 }
 
 /*scroll boxes*/
