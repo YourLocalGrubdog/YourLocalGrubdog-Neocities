@@ -260,10 +260,15 @@ footer {
 	color: var(--white); 
   background-color: var(--darkblue); 
   border-top: solid var(--lightblue);
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
+}
+
+@media screen and (min-width: 950px) {
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
 }
 
 footer p {
