@@ -1,0 +1,281 @@
+/*forces the site to play nice on all browsers*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {  
+/*colors*/  
+--white: #edf9fa;  
+--darkblue: #0a304d;  
+--lightblue: #7fd1df;
+--lb-trans:#7fd1df65;  
+--shadow: #00070cc4;
+--yellow: #f0b50c;
+}    
+
+/*Global text code start*/
+body {
+  font-family: "Atkinson Hyperlegible", "Verdana", sans-serif;
+  color:var(--lightblue);
+  font-size: 18px;
+  background-image: url("bg_body01.png");
+  background-size: cover;
+}
+
+section {
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+p {
+	margin-bottom:20px;
+  font-size: 20px;
+  line-height: 30px;
+  text-decoration: underline dashed 2px var(--lb-trans);
+  text-underline-offset: 8px;
+}
+
+h1, h2, h3, h4 {
+  color: var(--yellow);
+  margin-bottom:20px;
+}
+
+strong {
+  color: var(--yellow);
+}
+
+br {
+	margin-bottom:10px;
+}
+
+a {
+	color: var(--white);
+  text-decoration: underline solid 2px var(--white);
+  text-underline-offset: 8px;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle; 
+}
+
+blockquote {
+  background-color: var(--shadow);
+  font-style: italic;
+  margin: 0px 100px 10px 100px;
+  padding: 10px 15px 15px 15px;
+  border-left: solid 5px var(--yellow);
+}
+
+ul,ol {
+    margin-bottom: 20px;
+    padding-left: 5rem;
+    max-width: 80ch;
+    font-size: 20px;
+    line-height: 30px;
+    text-decoration: underline dashed 2px var(--lb-trans);
+    text-underline-offset: 8px;
+    }
+    ul ul {
+    margin-bottom: 0px;
+    }
+    ul li {
+    margin-bottom: 5px;
+    }
+
+/*add to image you want responsive*/
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/*add to image you want centered*/
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure {
+  padding: 5px;
+}
+
+figcaption {
+	padding: 5px;
+	text-align: center;
+  color: var(--yellow);
+}
+
+/*Global text code end*/
+
+/*flex box*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.threefourths {
+  flex: 75%;
+}
+
+.onefourth
+{
+  flex: 25%;
+}
+
+.half {
+  flex: 50%;
+}
+/*What it says on tin; can be anything depending on the page*/
+.maincontent {
+  flex: 75%;
+}
+
+/*Table of Contents*/
+.sidebar {
+  flex: 25%;
+  padding: 10px;
+  background: var(--darkblue);
+  color: var(--white);
+  border-right-style: solid;
+  border-color: var(--lightblue);
+  height: 100vh;
+  box-shadow: 10px 2px 15px 4px var(--shadow);
+  z-index: 1;
+  }
+  .sidebar h1 {
+    color: var(--lightblue);
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+  .sidebar hr {
+    color: var(--lightblue);
+    margin-bottom: 15px;
+  }
+  .sidebar a {
+    margin-bottom: 30px;
+  }
+  .sidebar img {
+    margin-right: 15px;
+  }
+
+.m-menu {
+  display: none;
+}
+
+@media screen and (max-width: 950px) {
+  .d-menu {
+    display:none;
+  }
+  .m-menu {
+    display:block;
+    background: var(--darkblue);
+    color: var(--white);
+  }
+  .m-menu h1 {
+    color: var(--lightblue);
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+  .m-menu hr {
+    color: var(--lightblue);
+    margin-bottom: 15px;
+  }
+  summary {
+    color: var(--lightblue);
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+  }
+  summary::marker {
+  color: var(--yellow);
+  font-size: 2rem;
+  }
+  body {
+     background-image: linear-gradient(var(--darkblue), #0f4c6e);
+  }
+}
+
+/*scroll boxes*/
+.scroll-box {
+background: transparent;
+max-height: 80vh;
+padding: 15px;
+overflow-y: scroll;
+}
+
+.scroll-box-s {
+background: transparent;
+max-height: 100vh;
+padding: 15px;
+overflow-y: scroll;
+}
+
+/*Javascript-free tabs, curtosy of KaleChips: https://kalechips.net/projects/snippets.php?p=tabs*/
+.tabwrap article {
+	display: none;
+}
+
+.tabwrap article:target {
+	display:block;
+}
+
+.shape-container {
+  position: relative;
+  height: 80px;
+  margin-bottom: 5px; 
+  }
+.shape {
+  height: 80px;
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 41% 100%, 36% 54%, 0 53%, 0 0);
+  background: var(--lightblue);
+  }
+.small-shape {
+  position: absolute;
+  background: var(--darkblue);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  clip-path: polygon(49% 3%, 99.8% 3%, 99.8% 97%, 41.2% 97%, 36% 50%, 0% 50%, 0% 3%);
+  }
+.shape-container h1 {
+	text-align: right;
+	padding: 24px 20px;
+  color: var(--lightblue);
+}
+
+/*Footer*/
+
+footer {
+	padding: 10px; 
+	text-align: right;
+	color: var(--white); 
+  background-color: var(--darkblue); 
+  border-top: solid var(--lightblue);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+	margin-bottom: 0px;
+  text-decoration: none;
+}
+
+.sr-only {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
