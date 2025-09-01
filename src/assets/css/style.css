@@ -68,12 +68,8 @@
 
 /*FONT IMPORTS*/
 @font-face {
-    font-family: Patrick-Hand;
-    src: url('/assets/fonts/PatrickHand-Regular.ttf');
-}
-@font-face {
-    font-family: ShortStack;
-    src: url('/assets/fonts/ShortStack-Regular.ttf');
+    font-family: Shantell-Sans;
+    src: url('/assets/fonts/ShantellSans.woff2');
 }
 
 /*FLEX BOX*/
@@ -99,7 +95,7 @@
 
 /*OTHER SEMANTICS (and classes inter-linked with semantics)*/
 body {
-    font-family: "ShortStack", "Arial", sans-serif;
+    font-family: "Shantell-Sans", "Arial", sans-serif;
     color:var(--txt);
     background-color:var(--background);
     background-image: var(--background-img);
@@ -200,7 +196,7 @@ a {
 }
 
 h1, h2, h3, h4 {
-    font-family: "Patrick-Hand", "Arial", sans-serif;
+    font-family: "Shantell-Sans", "Arial", sans-serif;
     max-width: 70ch; /*This max width should NEVER be hit, but better safe than sorry*/
 }
 
@@ -289,7 +285,7 @@ hr {
 
 button, label{
     background-color: var(--btn);
-    font-family: "ShortStack", "Arial", sans-serif;
+    font-family: "Shantell-Sans", "Arial", sans-serif;
     color: var(--btn-txt);
     text-align: center;
     text-decoration: none;
