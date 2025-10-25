@@ -113,12 +113,6 @@ header, .sidebar nav, aside, section  {
     box-shadow: 5px 5px 5px var(--shadow);
 }
 
-section {
-    transform: rotate(-0.002turn);
-}
-    section:nth-of-type(odd){
-        transform: rotate(0.003turn);
-    }  
     section h1{
         font-size:2em; /*Because it broke for some reason lmao*/
     section p {
@@ -307,6 +301,13 @@ button, label{
         background: var(--btn-hover);
         font-weight: bold;
         cursor: pointer;
+    }
+    label:focus-within,
+    label:hover {
+        color: var(--btn-hover-txt);
+        background: var(--btn-hover);
+        font-weight: bold;
+        cursor: pointer;
 }
 
 /*CLASSES*/
@@ -349,14 +350,6 @@ button, label{
         margin:0px;
 }
 
-/*Javascript-free tabs, curtosy of KaleChips: https://kalechips.net/projects/snippets.php?p=tabs*/
-.tabwrap article {
-	display: none;
-}
-    .tabwrap article:target {
-	    display:block;
-}
-
 .scroll-box {
     background-color: var(--scroll-box);
     color: var(--scroll-box-txt);
@@ -380,8 +373,21 @@ button, label{
     overflow-y: scroll;
 }
 
-/*Adds "washi tape" to the site boxes. Code by/from https://hillhouse.neocities.org/snippets#washitape with changes made so it plays nice with my layout lol*/
 .taped::before {
+  background-image:url('/assets/img/scales_tape.png');
+  background-repeat:no-repeat;
+  display:block;
+  content:" ";
+  position:relative;
+  height:50px;
+  width:150px;
+background-size:contain;
+  top:-45px;
+  left:40%;
+}
+
+/*Adds "washi tape" to the site boxes. Code by/from https://hillhouse.neocities.org/snippets#washitape with changes made so it plays nice with my layout lol*/
+/*.taped::before {
     background-image:url('/assets/img/scales_tape.png');
     background-repeat:no-repeat;
     display:block;
@@ -390,13 +396,13 @@ button, label{
     height:50px;
     width:150px;
   background-size:contain;
-    top:-30px;
+    top:5%;
     left:40%;
-}
+}*/
 /*Gives the tape psudo-randomness*/
     .taped:nth-of-type(even)::before {
         background-image:url('/assets/img/star_tape.png'); /*This is a good one to use for size ref, it plays nice w/ the boxes*/
-        left:5% 
+        left:5px 
         }
     .taped:nth-of-type(3n)::before {
         background-image:url('/assets/img/leaf_tape.png'); 
@@ -456,12 +462,6 @@ button, label{
     header, .sidebar nav, aside, section  {
     padding: 3vh;
 }
-    section{
-        transform: rotate(0turn);
-    }
-    section:nth-of-type(odd) {
-        transform: rotate(0turn);
-    }
     section p {
         text-indent: 1.5rem;
     }

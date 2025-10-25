@@ -1,0 +1,54 @@
+input[type="radio"] {
+  appearance: none;
+  color: var(--txt);
+  background-color: var(--box);
+  border: 0.15em solid #1e0b00;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+}
+input[type="radio"]:focus {
+  background-color: var(--background);
+}
+
+/*Filters, credit: https://solaria.neocities.org/guides/cssfilter*/
+.collection:has(input:checked) span {
+    display: none;}
+.collection:has(#all:checked) span {
+    display: inline-block;}
+.collection:has(#drawing:checked) span[class~="drawing"] {
+    display: inline-block;}
+.collection:has(#writing:checked) span[class~="writing"] {
+    display: inline-block;}
+.collection:has(#webweaving:checked) span[class~="webweaving"] {
+    display: inline-block;}
+.collection:has(#eleven:checked) span[class~="eleven"] {
+    display: inline-block;}
+.collection:has(#sitetemp:checked) span[class~="sitetemp"] {
+    display: inline-block;}
+.collection:has(#code:checked) span[class~="code"] {
+    display: inline-block;}
+.collection:has(#graph:checked) span[class~="graph"] {
+    display: inline-block;}
+.collection:has(#programs:checked) span[class~="programs"] {
+    display: inline-block;}
+.collection:has(#tools:checked) span[class~="tools"] {
+    display: inline-block;}
+.collection:has(#alter:checked) span[class~="alter"] {
+    display: inline-block;}
+.collection:has(#edu:checked) span[class~="edu"] {
+    display: inline-block;}
+.collection:has(#book:checked) span[class~="book"] {
+    display: inline-block;}
+.collection:has(#street:checked) span[class~="street"] {
+    display: inline-block;}
+.collection:has(#digi:checked) span[class~="digi"] {
+    display: inline-block;}
+.collection:has(#read:checked) span[class~="read"] {
+    display: inline-block;}
+.collection:has(#fun:checked) span[class~="fun"] {
+    display: inline-block;}
+.collection:has(#game:checked) span[class~="game"] {
+    display: inline-block;}
+.collection:has(#coll:checked) span[class~="coll"] {
+    display: inline-block;}
